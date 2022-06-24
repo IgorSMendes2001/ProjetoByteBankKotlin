@@ -4,7 +4,20 @@ class Conta {
     var saldo=0.0
 
     constructor()
+    fun depositar(conta:Conta,valor:Double){
+        conta.saldo+=valor
+        println("Depósito de $valor realizado com sucesso!")
+    }
+    fun sacar(conta:Conta,valor: Double){
+        if(conta.saldo<=0){
+            println("Impossível Sacar,saldo insuficiente")
+        }else{
+            conta.saldo-=valor
+            println("Saque de $valor realizado com sucesso!")
+        }
+    }
 }
+
 fun main(){
     println("Bem vindo ao ByteBank")
     val conta1 = Conta()
